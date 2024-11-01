@@ -1,0 +1,41 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+
+// 카드 중 가장 작은 두개를 골라 합쳐야함
+// 합친 두 카드를 묶음에 넣음
+// 반복
+
+int n;
+int answer;
+priority_queue<int, vector<int>, greater<int>> pq;
+
+int main(void) {
+
+	cin >> n;
+	if (n == 1) {
+		cout <<0<<"\n";
+		return 0;
+	}
+	int tmp;
+	for (int i = 0; i < n; i++) {
+		cin >> tmp;
+		pq.push(tmp);
+	}
+	while (!pq.empty()) {
+		int sum = 0;
+		sum += pq.top();
+		pq.pop();
+
+		if (!pq.empty()) {
+			sum += pq.top();
+			pq.pop();
+			if (!pq.empty())
+				pq.push(sum);
+		}
+		answer += sum;
+	}
+
+	cout << answer<<"\n";
+	return 0;
+}
