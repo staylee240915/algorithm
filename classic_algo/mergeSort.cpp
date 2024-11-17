@@ -6,6 +6,9 @@ int arr[6] = {1,6,4,3,5,2};
 // 두 배열을 합치는 것.
 // 두 배열을 합치기 위해 새로운 배열이 필요.
 //본 예제는 오름차순으로 진행.
+//본 예제는 sorted라는 새로운 배열에 값을 넣기 떄문에
+//k = 0이 되지만, 만약 그렇지 않고 left right 배열을 만들어서
+//기존의 배열에 넣는 방식이라면 k = left로 구현되어야함.
 void merge(int *arr, int first, int mid, int last){
 
     int* sorted = new int[last-first+1];
