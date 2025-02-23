@@ -42,5 +42,12 @@ public class test {
         System.err.println(hashlist.get("test")[0].get(1));
         System.err.println(hashlist.get("test"));
 
+        String[][] s4 = {
+            {"POOOP", "OXXOX", "OPXPX"},
+            {"POOOP", "OXXOX", "OPXPX"}
+        };
+        String[] s5 = s4[0];
+        System.out.println(s5[0].charAt(1));
+
     }
 }
